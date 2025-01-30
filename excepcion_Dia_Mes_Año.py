@@ -23,8 +23,8 @@ def obtener_fecha():
             fecha_str = input("Ingrese una fecha en formato DD/MM/AAAA: ")
             dia, mes, anio = map(int, fecha_str.split('/'))
 
-            if anio != 2025:
-                raise AnioInvalidoException("Solo se permiten fechas del año 2025.")
+            if anio < 1:
+                raise AnioInvalidoException("Año inválido. Debe ser mayor que 0.")
 
             dias_por_mes = {
                 1: 31, 2: 29 if es_bisiesto(anio) else 28, 3: 31, 4: 30,
